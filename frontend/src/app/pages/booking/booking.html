@@ -1,0 +1,66 @@
+<section class="booking-hero">
+  <div class="container">
+    <h1>Book Your Table</h1>
+    <p>HOME / BOOKING</p>
+  </div>
+</section>
+
+<section class="booking-section section-padding">
+  <div class="container booking-grid">
+    
+    <div class="booking-image">
+      <img src="https://images.unsplash.com/photo-1555992336-03a23c6d0b8b" alt="Restaurant">
+      <div class="play-btn">
+        <i class="fas fa-play"></i>
+      </div>
+    </div>
+
+    <div class="booking-form">
+      <span class="label">BOOKING FORM</span>
+      <h2>Book Your Table</h2>
+
+      <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-grid">
+          <input 
+            type="date" 
+            formControlName="reservationDate"
+            [class.invalid]="submitted && f['reservationDate'].errors"
+          >
+          <div class="error" *ngIf="submitted && f['reservationDate'].errors">
+            <small>Date is required</small>
+          </div>
+
+          <input 
+            type="time" 
+            formControlName="reservationTime"
+            [class.invalid]="submitted && f['reservationTime'].errors"
+          >
+          <div class="error" *ngIf="submitted && f['reservationTime'].errors">
+            <small>Time is required</small>
+          </div>
+
+          <input 
+            type="number" 
+            placeholder="Number of Persons"
+            formControlName="numberOfPersons"
+            [class.invalid]="submitted && f['numberOfPersons'].errors"
+          >
+          <div class="error" *ngIf="submitted && f['numberOfPersons'].errors">
+            <small *ngIf="f['numberOfPersons'].errors['required']">Number of persons is required</small>
+            <small *ngIf="f['numberOfPersons'].errors['min']">Minimum 1 person required</small>
+          </div>
+
+          <textarea 
+            placeholder="Special Request"
+            formControlName="specialRequest"
+          ></textarea>
+        </div>
+
+        <button class="primary-btn full-width">Book Now</button>
+
+      </form>
+    </div>
+
+  </div>
+</section>

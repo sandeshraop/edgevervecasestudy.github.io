@@ -1,0 +1,40 @@
+<section class="cart-hero">
+  <div class="container">
+    <h1>Cart & Billing</h1>
+    <p>HOME / CART</p>
+  </div>
+</section>
+
+<section class="cart-section section-padding">
+  <div class="container">
+
+    <div class="cart-card" *ngFor="let item of cartItems">
+      <img [src]="item.imageUrl" />
+
+      <div class="cart-info">
+        <h4>{{item.name}}</h4>
+        <p>₹{{item.price}}</p>
+
+        <div class="qty-controls">
+          <button (click)="decrease(item)">-</button>
+          <span>{{item.quantity}}</span>
+          <button (click)="increase(item)">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="clear-btn">
+      <button (click)="clearCart()">Clear cart</button>
+    </div>
+
+    <div class="summary-bar">
+      <div>Cart ({{cartItems.length}})</div>
+
+      <div class="summary-right">
+        <span>Subtotal: ₹{{getTotal()}}</span>
+        <button class="primary-btn">Place Order</button>
+      </div>
+    </div>
+
+  </div>
+</section>

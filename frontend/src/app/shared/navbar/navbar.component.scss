@@ -1,0 +1,91 @@
+.navbar {
+  background: #0c1b33;
+  padding: 1rem 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand {
+  .brand-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+    
+    &:hover {
+      color: #f4a100;
+    }
+  }
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: rgba(255,255,255,0.1);
+    color: #f4a100;
+  }
+}
+
+.admin-link {
+  background: rgba(244, 161, 0, 0.2);
+  border: 1px solid #f4a100;
+  
+  &:hover {
+    background: rgba(244, 161, 0, 0.3);
+  }
+}
+
+.logout-btn {
+  background: transparent;
+  border: 1px solid #dc3545;
+  color: #dc3545;
+  cursor: pointer;
+  font-family: inherit;
+  
+  &:hover {
+    background: #dc3545;
+    color: white;
+  }
+}
+
+// Mobile responsive
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .nav-link {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}

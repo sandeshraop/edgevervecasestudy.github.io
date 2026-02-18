@@ -1,0 +1,46 @@
+<section class="menu-hero">
+  <div class="container">
+    <h1>Food Menu</h1>
+    <p>HOME / MENU</p>
+  </div>
+</section>
+
+<section class="category-bar">
+  <div class="container category-icons">
+    <div>🍜</div>
+    <div>🍗</div>
+    <div>🥣</div>
+    <div>🍝</div>
+    <div>🍕</div>
+    <div>🥤</div>
+  </div>
+</section>
+
+<section class="menu-grid-section section-padding">
+  <div class="container menu-grid">
+
+    <div class="menu-card" *ngFor="let item of menuItems">
+      
+      <div class="image-wrapper">
+        <img [src]="item.imageUrl" 
+             [alt]="item.name"
+             (error)="handleImageError($event)"
+             loading="lazy" />
+      </div>
+
+      <div class="card-body">
+        <div class="food-info">
+          <h4>{{item.name}}</h4>
+          <span class="price">₹{{item.price}}</span>
+        </div>
+
+        <button class="add-btn" (click)="addToCart(item)">
+          🛒
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

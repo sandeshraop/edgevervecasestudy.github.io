@@ -1,0 +1,131 @@
+.hero {
+  height: calc(100vh - 60px); /* 60px ≈ navbar height (20px top + 20px bottom + content) */
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
+      rgba(15, 23, 43, 0.95),
+      rgba(15, 23, 43, 0.95)
+    ),
+    url('https://images.unsplash.com/photo-1555992336-03a23c6d0b8b');
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-text {
+  max-width: 500px;
+}
+
+.hero-text h1 {
+  font-size: 55px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.hero-image img {
+  width: 450px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 8px solid rgba(255,255,255,0.1);
+}
+
+/* Features Section */
+.features {
+  background: var(--light-bg);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.feature-card {
+  background: white;
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card .icon {
+  font-size: 35px;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.feature-card h4 {
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+/* About Section */
+.about {
+  background: white;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.about-images img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.about-label {
+  color: var(--primary);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.about-text h2 {
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  margin-bottom: 20px;
+  color: var(--text-muted);
+}
+
+.experience {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+.experience h3 {
+  color: var(--primary);
+  font-size: 32px;
+  margin: 0;
+}

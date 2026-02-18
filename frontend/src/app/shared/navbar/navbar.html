@@ -1,0 +1,40 @@
+<nav class="navbar">
+  <div class="container nav-container">
+
+    <div class="logo">
+      <i class="fas fa-utensils"></i>
+      <span>The Cozy Table</span>
+    </div>
+
+    <ul class="nav-links">
+
+      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">HOME</a></li>
+      <li><a routerLink="/booking" routerLinkActive="active">TABLE BOOKING</a></li>
+      <li><a routerLink="/menu" routerLinkActive="active">MENU</a></li>
+      <li><a routerLink="/cart" routerLinkActive="active">CART</a></li>
+      <li><a routerLink="/feedback" routerLinkActive="active">FEEDBACK</a></li>
+
+      <!-- If NOT logged in -->
+      <ng-container *ngIf="!isLoggedIn">
+        <li><a routerLink="/login" routerLinkActive="active">LOGIN</a></li>
+        <li><a routerLink="/register" routerLinkActive="active">REGISTER</a></li>
+      </ng-container>
+
+      <!-- If logged in -->
+      <li class="profile-menu" *ngIf="isLoggedIn" (click)="toggleDropdown()">
+        <span class="profile-icon">
+          <i class="fas fa-user-circle"></i>
+          {{ userName }} <i class="fas fa-chevron-down small-icon"></i>
+        </span>
+
+        <div class="dropdown" *ngIf="showDropdown">
+          <a routerLink="/profile">My Profile</a>
+          <a routerLink="/orders">My Orders</a>
+          <a (click)="logout()">Logout</a>
+        </div>
+      </li>
+
+    </ul>
+
+  </div>
+</nav>

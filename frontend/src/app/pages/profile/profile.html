@@ -1,0 +1,79 @@
+<section class="auth-hero">
+  <div class="container">
+    <h1>My Profile</h1>
+    <p>HOME / PROFILE</p>
+  </div>
+</section>
+
+<section class="auth-section section-padding">
+  <div class="auth-card">
+
+    <h2>Profile Information</h2>
+
+    <div class="error-message" *ngIf="errorMessage">
+      {{ errorMessage }}
+    </div>
+
+    <div class="success-message" *ngIf="successMessage">
+      {{ successMessage }}
+    </div>
+
+    <form [formGroup]="profileForm" (ngSubmit)="updateProfile()">
+
+      <input 
+        type="text" 
+        formControlName="name" 
+        placeholder="Full Name"
+        [class.invalid]="profileForm.get('name')?.touched && profileForm.get('name')?.invalid"
+      >
+
+      <div class="error" *ngIf="profileForm.get('name')?.touched && profileForm.get('name')?.invalid">
+        <small>Name is required</small>
+      </div>
+
+      <input 
+        type="email" 
+        formControlName="email" 
+        placeholder="Email Address" 
+        [disabled]="true"
+        title="Email cannot be changed"
+      >
+
+      <small class="info-text">Email address cannot be changed</small>
+
+      <input 
+        type="text" 
+        formControlName="phone" 
+        placeholder="Phone Number"
+        [class.invalid]="profileForm.get('phone')?.touched && profileForm.get('phone')?.invalid"
+      >
+
+      <div class="error" *ngIf="profileForm.get('phone')?.touched && profileForm.get('phone')?.invalid">
+        <small>Phone number is required</small>
+      </div>
+
+      <textarea 
+        formControlName="address" 
+        placeholder="Address (Optional)"
+        rows="3"
+      ></textarea>
+
+      <button 
+        type="submit" 
+        class="primary-btn full-width"
+        [disabled]="loading || profileForm.invalid"
+      >
+        <span *ngIf="!loading">Update Profile</span>
+        <span *ngIf="loading">Updating...</span>
+      </button>
+
+    </form>
+
+    <div class="profile-actions">
+      <button class="secondary-btn" (click)="navigateToChangePassword()">
+        Change Password
+      </button>
+    </div>
+
+  </div>
+</section>

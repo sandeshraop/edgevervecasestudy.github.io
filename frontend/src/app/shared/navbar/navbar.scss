@@ -1,0 +1,81 @@
+.navbar {
+  background: var(--dark);
+  padding: 20px 0;
+  position: relative;
+  z-index: 10;
+  color: white;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+.nav-links a.active {
+  color: var(--primary);
+}
+
+.profile-menu {
+  position: relative;
+  cursor: pointer;
+}
+
+.profile-icon {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.small-icon {
+  font-size: 12px;
+}
+
+.dropdown {
+  position: absolute;
+  top: 35px;
+  right: 0;
+  background: white;
+  color: black;
+  border-radius: 6px;
+  width: 150px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown a {
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.dropdown a:hover {
+  background: #f8f9fa;
+}

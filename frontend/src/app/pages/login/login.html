@@ -1,0 +1,52 @@
+<section class="auth-hero">
+  <div class="container">
+    <h1>Login</h1>
+    <p>HOME / LOGIN</p>
+  </div>
+</section>
+
+<section class="auth-section section-padding">
+  <div class="auth-card">
+
+    <h2>Login to Your Account</h2>
+
+    <div class="error-message" *ngIf="errorMessage">
+      {{ errorMessage }}
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+      <input 
+        type="email"
+        formControlName="email"
+        placeholder="Email Address"
+        [class.invalid]="loginForm.get('email')?.touched && loginForm.get('email')?.invalid"
+      >
+
+      <div class="error" *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
+        <small *ngIf="loginForm.get('email')?.errors?.['required']">Email is required</small>
+        <small *ngIf="loginForm.get('email')?.errors?.['email']">Enter valid email</small>
+      </div>
+
+      <input 
+        type="password"
+        formControlName="password"
+        placeholder="Password"
+        [class.invalid]="loginForm.get('password')?.touched && loginForm.get('password')?.invalid"
+      >
+
+      <div class="error" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+        <small *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</small>
+      </div>
+
+      <button class="primary-btn full-width">Login</button>
+
+    </form>
+
+    <p class="auth-link">
+      Don't have an account?
+      <a routerLink="/register">Register</a>
+    </p>
+
+  </div>
+</section>

@@ -1,0 +1,144 @@
+.menu-hero {
+  background: linear-gradient(
+      rgba(15, 23, 43, 0.9),
+      rgba(15, 23, 43, 0.9)
+    ),
+    url('https://images.unsplash.com/photo-1555992336-03a23c6d0b8b');
+  background-size: cover;
+  background-position: center;
+  padding: 80px 0;
+  color: white;
+  text-align: center;
+}
+
+.menu-hero h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.category-bar {
+  background: #fff;
+  padding: 15px 0;
+}
+
+.category-icons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  font-size: 24px;
+}
+
+.menu-grid-section {
+  background: #f8f9fa;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.menu-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.menu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.image-wrapper {
+  overflow: hidden;
+}
+
+.menu-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  filter: grayscale(40%);
+  transition: 0.4s;
+}
+
+.menu-card:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+.card-body {
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.food-info h4 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.price {
+  font-size: 14px;
+  font-weight: 600;
+  color: #f4a100;
+}
+
+.add-btn {
+  background: #f4a100;
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-btn:hover {
+  background: #e69500;
+  transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .category-icons {
+    gap: 20px;
+    font-size: 20px;
+  }
+  
+  .menu-hero h1 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .category-icons {
+    gap: 15px;
+    font-size: 18px;
+  }
+  
+  .menu-hero {
+    padding: 60px 0;
+  }
+  
+  .menu-hero h1 {
+    font-size: 28px;
+  }
+}

@@ -1,0 +1,33 @@
+<nav class="navbar">
+  <div class="container">
+    <div class="nav-brand">
+      <a routerLink="/" class="brand-link">🍽️ The Cozy Table</a>
+    </div>
+    
+    <div class="nav-links">
+      <a routerLink="/" class="nav-link">Home</a>
+      <a routerLink="/menu" class="nav-link">Menu</a>
+      
+      <!-- Show only when logged in -->
+      <ng-container *ngIf="isLoggedIn()">
+        <a routerLink="/booking" class="nav-link">Reservations</a>
+        <a routerLink="/cart" class="nav-link">🛒 Cart</a>
+        <a routerLink="/feedback" class="nav-link">Feedback</a>
+        <a routerLink="/profile" class="nav-link">👤 Profile</a>
+        
+        <!-- Admin links -->
+        <ng-container *ngIf="isAdmin()">
+          <a routerLink="/admin" class="nav-link admin-link">👑 Admin</a>
+        </ng-container>
+        
+        <button (click)="logout()" class="nav-link logout-btn">Logout</button>
+      </ng-container>
+      
+      <!-- Show only when not logged in -->
+      <ng-container *ngIf="!isLoggedIn()">
+        <a routerLink="/login" class="nav-link">Login</a>
+        <a routerLink="/register" class="nav-link">Register</a>
+      </ng-container>
+    </div>
+  </div>
+</nav>
